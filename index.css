@@ -1,0 +1,30 @@
+#container{
+    height: 30vh;
+    width: 50vw;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    margin-top: 20%;
+}
+#display{
+    height: 30%;
+    width: 35%;
+    border: 2px solid black;
+}
+#controls{
+    height: 40%;
+    width: 80%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#controls button{
+    height: 50%;
+    width: 30%;
+}
