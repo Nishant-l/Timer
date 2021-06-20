@@ -1,5 +1,6 @@
 // Data
-let counter=66;
+let counter=0;
+let retunedEventFromStart;
 // Cashing DOM
 const display=document.querySelector('#display');
 const startButton=document.querySelector('#start');
@@ -9,9 +10,9 @@ const hourDisplay=document.querySelector('#hours');
 const minutesDisplay=document.querySelector('#minutes');
 const secDisplay=document.querySelector('#sec');
 // Adding Listners
-startButton.addEventListener('click',()=>{});
-stopButton.addEventListener('click',()=>{});
-resetButton.addEventListener('click',()=>{});
+startButton.addEventListener('click',inc);
+stopButton.addEventListener('click',stop);
+resetButton.addEventListener('click',reset);
 // Initializers
 render();
 
@@ -25,4 +26,19 @@ function render(){
     secDisplay.textContent=s;
 }
 
-console.log('--------------');
+function inc(){
+    retunedEventFromStart=setInterval(()=>{
+        counter+=1;
+        render();
+    },100);
+}
+
+function stop(){
+    clearInterval(retunedEventFromStart);
+}
+
+function reset(){
+    stop();
+    counter=0;
+    render();
+}
