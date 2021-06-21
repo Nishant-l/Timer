@@ -37,7 +37,7 @@ function inc(){
     retunedEventFromStart=setInterval(()=>{
         counter+=1;
         render();
-    },100);
+    },1000);
 }
     // callback on stop button Click
 function stop(){
