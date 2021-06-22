@@ -34,14 +34,22 @@ function render(){
 
     // callback on start button Click
 function inc(){
-    retunedEventFromStart=setInterval(()=>{
-        counter+=1;
-        render();
-    },1000);
+    // to prevent from calling setInterval again on clicking start if it is alredy running
+    if(retunedEventFromStart){
+        return;
+    }else{
+        retunedEventFromStart=setInterval(()=>{
+            counter+=1;
+            render();
+        },1000);
+    }
+    
 }
     // callback on stop button Click
 function stop(){
     clearInterval(retunedEventFromStart);
+    // once stop on clicking on start should start again by passing the check on inc() function;
+    retunedEventFromStart=false;
 }
     // callback on reset button Click
 function reset(){
